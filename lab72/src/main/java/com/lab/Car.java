@@ -1,19 +1,26 @@
 package com.lab;
 
-public abstract class Car {
+public  class Car {
     private String color;
-
-    public Car(String color) {
+    private Engine engine;
+    public Car(String color, Engine engine) {
         this.color = color;
+        this.engine = engine;
     }
 
     public String getColor() {
         return color;
     }
 
-    public abstract void refill();
+    public void refill(){
+       engine.refill();
+    }
 
-    public abstract double getRemainingMileage();
+    public  double getRemainingMileage(){
+        return engine.getRemainingMileage();
+    }
 
-    public abstract double run(double distance);
+    public  double run(double distance){
+       return engine.run(distance);
+    }
 }
